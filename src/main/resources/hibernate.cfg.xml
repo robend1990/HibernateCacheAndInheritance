@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">vagrant</property>
+        <property name="hibernate.connection.password">admin</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://192.168.1.104:5432/vagrant</property>
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+  		<property name="hibernate.generate_statistics">true</property>
+ 		<property name="hibernate.cache.use_query_cache">true</property>
+ 
+ 		<mapping class="HibernatePGS1to1.HibernatePGS1to1.Agent"/>
+ 		<mapping class="inheritance.single.table.BillingDetails"/>
+ 		<mapping class="inheritance.single.table.CreditCard"/>
+ 		<mapping class="inheritance.single.table.BankAccount"/>
+ 		<mapping class="inheritance.table.per.concrete.clas.BillingDetails"/>
+ 		<mapping class="inheritance.table.per.concrete.clas.CreditCard"/>
+ 		<mapping class="inheritance.table.per.concrete.clas.BankAccount"/>
+ 		<mapping class="inheritance.join.table.Vehicle"/>
+ 		<mapping class="inheritance.join.table.Car"/>
+ 		<mapping class="inheritance.join.table.Truck"/>
+ 		
+ 		
+ 
+    </session-factory>
+</hibernate-configuration>
